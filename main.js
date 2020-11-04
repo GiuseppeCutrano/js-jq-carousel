@@ -1,48 +1,48 @@
 $( document ).ready(function() {
 
     //al clic sulla classe next si attiva la funzione prossimaslide
-    $(".next").click(prossimaslide);
+    $(".next").click(prossimaSlide);
 
     //al clic sulla classe prev si attiva la funzione precedenteslide
-    $(".prev").click(precedenteslide);
+    $(".prev").click(precedenteSlide);
 
     // funzione prossimaslide
-    function prossimaslide(){
+    function prossimaSlide(){
 
         //in una variabile salvo la posizione active dell'immagine e della nav orizz
-        var posizioneimg = $(".slider-wrapper .images  img.active");
-        var posizionenav = $(".nav i.active");
+        var posizioneImg = $(".slider-wrapper .images  img.active");
+        var posizioneNav = $(".nav i.active");
 
         //tolgo la classe active perchè altrimenti rimane sul precedente posizionamento
-        posizioneimg.removeClass("active");
-        posizionenav.removeClass("active");
+        posizioneImg.removeClass("active");
+        posizioneNav.removeClass("active");
 
 
 
-        if(posizioneimg.hasClass("last")){
+        if(posizioneImg.hasClass("last")){
             $(".slider-wrapper .images  img.first").addClass("active");
             $(".nav i.first").addClass("active");
         } else{
 
-            posizioneimg.next("img").addClass("active");
-            posizionenav.next("i").addClass("active");
+            posizioneImg.next("img").addClass("active");
+            posizioneNav.next("i").addClass("active");
         }
 
     }
-    function precedenteslide(){
+    function precedenteSlide(){
 
-            var posizioneimg = $(".slider-wrapper .images  img.active");
-            var posizionenav = $(".nav i.active");
+            var posizioneImg = $(".slider-wrapper .images  img.active");
+            var posizioneNav = $(".nav i.active");
 
-            posizioneimg.removeClass("active");
-            posizionenav.removeClass("active");
+            posizioneImg.removeClass("active");
+            posizioneNav.removeClass("active");
 
-            if(posizioneimg.hasClass("first")){
+            if(posizioneImg.hasClass("first")){
                 $(".slider-wrapper .images  img.last").addClass("active");
                 $(".nav i.last").addClass("active");
             } else{
-                posizioneimg.prev("img").addClass("active");
-                posizionenav.prev("i").addClass("active");
+                posizioneImg.prev("img").addClass("active");
+                posizioneNav.prev("i").addClass("active");
             }
 
         }
@@ -50,10 +50,10 @@ $( document ).ready(function() {
            console.log(event.which);
            switch(event.which) {
               case 37:
-                precedenteslide()
+                precedenteSlide()
                 break;
               case 39:
-               prossimaslide();
+               prossimaSlide();
                 break;
 
             }
