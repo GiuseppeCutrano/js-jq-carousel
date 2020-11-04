@@ -46,6 +46,17 @@ $( document ).ready(function() {
             }
 
         }
+         $(document).keyup(function(event){
+           console.log(event.which);
+           switch(event.which) {
+              case 37:
+                precedenteslide()
+                break;
+              case 39:
+               prossimaslide();
+                break;
 
+            }
+         })
 
     });
