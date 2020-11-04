@@ -29,24 +29,23 @@ $( document ).ready(function() {
         }
 
     }
-
     function precedenteslide(){
 
-        var posizioneimg = $(".slider-wrapper .images  img.active");
-        var posizionenav = $(".nav i.active");
+            var posizioneimg = $(".slider-wrapper .images  img.active");
+            var posizionenav = $(".nav i.active");
 
-        posizioneimg.removeClass("active");
-        posizionenav.removeClass("active");
+            posizioneimg.removeClass("active");
+            posizionenav.removeClass("active");
 
-        if(posizioneimg.hasClass("first")){
-            $(".slider-wrapper .images  img.last").addClass("active");
-            $(".nav i.last").addClass("active");
-        } else{
-            posizioneimg.prev("img").addClass("active");
-            posizionenav.prev("i").addClass("active");
+            if(posizioneimg.hasClass("first")){
+                $(".slider-wrapper .images  img.last").addClass("active");
+                $(".nav i.last").addClass("active");
+            } else{
+                posizioneimg.prev("img").addClass("active");
+                posizionenav.prev("i").addClass("active");
+            }
+
         }
 
-    }
 
-
-});
+    });
